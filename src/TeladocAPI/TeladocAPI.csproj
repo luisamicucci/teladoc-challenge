@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Teladoc.Application\Teladoc.Application.csproj" />
+    <ProjectReference Include="..\Teladoc.Infrastructure\Teladoc.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
