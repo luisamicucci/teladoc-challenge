@@ -13,11 +13,12 @@ namespace Teladoc.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<User> Create(User user)
+        public async Task<bool> Create(User user)
         {
-            var usr = await _dbContext.AddAsync(user);
-            await _dbContext.SaveChangesAsync();
-            return usr.Entity;
+            user.Id = Guid.NewGuid();
+            await _dbContext.AddAsync(user);
+            
+            return await _dbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<List<User>> RetrieveAll()
@@ -25,7 +26,7 @@ namespace Teladoc.Infrastructure.Repositories
             return _dbContext.Users.ToList();
         }
 
-        public async Task<bool> UniqueEmail(string email)
+        public async Task<bool> IsEmailUnique(string email)
         {
             return !_dbContext.Users.Any(usr => usr.Email == email);
         }

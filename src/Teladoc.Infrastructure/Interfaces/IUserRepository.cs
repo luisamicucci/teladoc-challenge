@@ -4,8 +4,8 @@ namespace Teladoc.Infrastructure.Interfaces
 {
     public interface IUserRepository
     {
-        Task<User> Create(User user);
+        Task<bool> Create(User user);
         Task<List<User>> RetrieveAll();
-        Task<bool> UniqueEmail(string email);
+        Task<bool> IsEmailUnique(string email);
     }
 }

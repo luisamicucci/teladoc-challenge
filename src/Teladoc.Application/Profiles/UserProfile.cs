@@ -8,7 +8,8 @@ namespace Teladoc.Application.Profiles
     {
         public UserProfile()
         {
-            CreateMap<User, UserModel>();
+            CreateMap<User, UserModel>()
+                .ReverseMap();
         }
     }
 }

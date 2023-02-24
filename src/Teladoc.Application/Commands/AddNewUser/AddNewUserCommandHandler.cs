@@ -36,12 +36,12 @@ namespace Teladoc.Application.Commands.AddNewUser
 
             var user = _mapper.Map<User>(request.User);
 
-            if(await _userRepository.UniqueEmail(user.Email))
+            if(!await _userRepository.IsEmailUnique(user.Email))
             {
-                await _userRepository.Create(user);
+                throw new ValidationException("Email field must be unique");
             }
 
-            return true;
+            return await _userRepository.Create(user);
         }
     }
 }

@@ -11,17 +11,17 @@ namespace Teladoc.Application.Commands.AddNewUser
                 .WithMessage("You must be at least 18 years old");
             RuleFor(x => x.User.FirstName)
                 .NotEmpty()
-                .WithMessage("The FirstName field is required");
+                .WithMessage("FirstName field is required");
             RuleFor(x => x.User.LastName)
-                .NotEmpty().WithMessage("The LastName field is required");
+                .NotEmpty().WithMessage("LastName field is required");
             RuleFor(x => x.User.Email)
                 .NotEmpty()
-                .WithMessage("The Email field is required")
+                .WithMessage("Email field is required")
                 .EmailAddress()
                 .WithMessage("A valid email is required");
             RuleFor(x => x.User.DateOfBirth)
                 .NotEmpty()
-                .WithMessage("The DateOfBirth field is required");
+                .WithMessage("DateOfBirth field is required");
         }
     }
 }
