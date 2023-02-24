@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9D907F7E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeladocAPI", "src\TeladocAPI\TeladocAPI.csproj", "{A307E80E-D69C-482E-BBB5-A7B6B7B8935D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teladoc.Application", "src\Teladoc.Application\Teladoc.Application.csproj", "{515473CB-1BD3-494B-B9A3-E29FF0968582}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teladoc.Application", "src\Teladoc.Application\Teladoc.Application.csproj", "{515473CB-1BD3-494B-B9A3-E29FF0968582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teladoc.Domain", "src\Teladoc.Domain\Teladoc.Domain.csproj", "{E3A33528-0DEF-4889-AD57-98D117E3110D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teladoc.Domain", "src\Teladoc.Domain\Teladoc.Domain.csproj", "{E3A33528-0DEF-4889-AD57-98D117E3110D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teladoc.Infrastructure", "src\Teladoc.Infrastructure\Teladoc.Infrastructure.csproj", "{5E354BD0-3679-4050-BFA5-88F1988EB56A}"
 EndProject
