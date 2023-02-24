@@ -1,6 +1,6 @@
 ﻿using Teladoc.Domain.Entities;
 
-namespace TeladocAPI.Models
+namespace Teladoc.Application.Models
 {
     public class UserModel
     {
@@ -8,6 +8,7 @@ namespace TeladocAPI.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public int Age => (int)((DateTime.Today - DateOfBirth).TotalDays / 365);
 
         public static User operator +(User left, UserModel right)
         {

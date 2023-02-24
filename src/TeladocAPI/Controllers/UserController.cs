@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Teladoc.Application.Commands.AddNewUser;
-using Teladoc.Domain.Entities;
-using TeladocAPI.Models;
+using Teladoc.Application.Models;
+using Teladoc.Application.Queries.RetrieveUsers;
 
 namespace TeladocAPI.Controllers
 {
@@ -22,12 +22,15 @@ namespace TeladocAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(UserModel model)
         {
-            var user = new User();
-
-            user += model;
-
-            await _mediator.Send(new AddNewUserCommand() { User = user });
+            await _mediator.Send(new AddNewUserCommand() { User = model });
             return Ok("User created");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var users = await _mediator.Send(new RetrieveUsersQuery());
+            return Ok(users);
         }
     }
 }

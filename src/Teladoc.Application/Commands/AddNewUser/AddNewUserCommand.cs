@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using Teladoc.Domain.Entities;
+using Teladoc.Application.Models;
 
 namespace Teladoc.Application.Commands.AddNewUser
 {
     public class AddNewUserCommand : IRequest<bool>
     {
-        public User User { get; set; }
+        public UserModel User { get; set; }
     }
 }

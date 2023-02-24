@@ -1,6 +1,6 @@
-﻿using MediatR;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Teladoc.Application.Profiles;
 
 namespace Teladoc.Application
 {
@@ -9,6 +9,7 @@ namespace Teladoc.Application
         public static void AddApplication(this IServiceCollection services)
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+            services.AddAutoMapper(typeof(UserProfile));
         }
     }
 }
