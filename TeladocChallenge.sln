@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AAB21BC1-5B9E-4EAD-A328-34C8630D8C6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9D907F7E-E592-42AD-96F3-ADDF51AD9CE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeladocAPI", "src\TeladocAPI\TeladocAPI.csproj", "{A307E80E-D69C-482E-BBB5-A7B6B7B8935D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teladoc.Application", "src\Teladoc.Application\Teladoc.Application.csproj", "{515473CB-1BD3-494B-B9A3-E29FF0968582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teladoc.Domain", "src\Teladoc.Domain\Teladoc.Domain.csproj", "{E3A33528-0DEF-4889-AD57-98D117E3110D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teladoc.Infrastructure", "src\Teladoc.Infrastructure\Teladoc.Infrastructure.csproj", "{5E354BD0-3679-4050-BFA5-88F1988EB56A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teladoc.Test.API", "tests\Teladoc.Test.API\Teladoc.Test.API.csproj", "{323B6270-BDF5-4801-AE24-99E893862B69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A307E80E-D69C-482E-BBB5-A7B6B7B8935D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A307E80E-D69C-482E-BBB5-A7B6B7B8935D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A307E80E-D69C-482E-BBB5-A7B6B7B8935D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A307E80E-D69C-482E-BBB5-A7B6B7B8935D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515473CB-1BD3-494B-B9A3-E29FF0968582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515473CB-1BD3-494B-B9A3-E29FF0968582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515473CB-1BD3-494B-B9A3-E29FF0968582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515473CB-1BD3-494B-B9A3-E29FF0968582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A33528-0DEF-4889-AD57-98D117E3110D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A33528-0DEF-4889-AD57-98D117E3110D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A33528-0DEF-4889-AD57-98D117E3110D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A33528-0DEF-4889-AD57-98D117E3110D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E354BD0-3679-4050-BFA5-88F1988EB56A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E354BD0-3679-4050-BFA5-88F1988EB56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E354BD0-3679-4050-BFA5-88F1988EB56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E354BD0-3679-4050-BFA5-88F1988EB56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323B6270-BDF5-4801-AE24-99E893862B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323B6270-BDF5-4801-AE24-99E893862B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323B6270-BDF5-4801-AE24-99E893862B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323B6270-BDF5-4801-AE24-99E893862B69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A307E80E-D69C-482E-BBB5-A7B6B7B8935D} = {AAB21BC1-5B9E-4EAD-A328-34C8630D8C6A}
+		{515473CB-1BD3-494B-B9A3-E29FF0968582} = {AAB21BC1-5B9E-4EAD-A328-34C8630D8C6A}
+		{E3A33528-0DEF-4889-AD57-98D117E3110D} = {AAB21BC1-5B9E-4EAD-A328-34C8630D8C6A}
+		{5E354BD0-3679-4050-BFA5-88F1988EB56A} = {AAB21BC1-5B9E-4EAD-A328-34C8630D8C6A}
+		{323B6270-BDF5-4801-AE24-99E893862B69} = {9D907F7E-E592-42AD-96F3-ADDF51AD9CE7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A3791D5-D967-4BE2-A9F6-BF5125DA1E3C}
+	EndGlobalSection
+EndGlobal
