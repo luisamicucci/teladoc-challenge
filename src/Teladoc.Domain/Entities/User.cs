@@ -2,7 +2,7 @@
 
 namespace Teladoc.Domain.Entities
 {
-    public class User : BaseEntity
+    public class User
     {
         [Required]
         public string FirstName { get; set; }

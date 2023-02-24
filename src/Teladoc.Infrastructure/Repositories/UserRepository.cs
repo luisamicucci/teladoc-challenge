@@ -1,23 +1,33 @@
-﻿using Teladoc.Domain.Entities;
+﻿using Teladoc.Domain;
+using Teladoc.Domain.Entities;
 using Teladoc.Infrastructure.Interfaces;
 
 namespace Teladoc.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public Task<User> Create(User user)
+        private readonly TeladocApiContext _dbContext;
+
+        public UserRepository(TeladocApiContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
         }
 
-        public Task<List<User>> RetrieveAll()
+        public async Task<User> Create(User user)
         {
-            throw new NotImplementedException();
+            var usr = await _dbContext.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
+            return usr.Entity;
         }
 
-        public Task<bool> UniqueEmail(string email)
+        public async Task<List<User>> RetrieveAll()
         {
-            throw new NotImplementedException();
+            return _dbContext.Users.ToList();
+        }
+
+        public async Task<bool> UniqueEmail(string email)
+        {
+            return !_dbContext.Users.Any(usr => usr.Email == email);
         }
     }
 }
