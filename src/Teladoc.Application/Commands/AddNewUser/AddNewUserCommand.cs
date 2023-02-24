@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using Teladoc.Domain.Entities;
 
 namespace Teladoc.Application.Commands.AddNewUser
 {
-    internal class AddNewUserCommand
+    public class AddNewUserCommand : IRequest<bool>
     {
+        public User User { get; set; }
     }
 }

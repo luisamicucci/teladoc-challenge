@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Teladoc.Application.Commands.AddNewUser
 {
-    internal class AddNewUserCommandHandler
+    public class AddNewUserCommandHandler : IRequestHandler<AddNewUserCommand, bool>
     {
+        public Task<bool> Handle(AddNewUserCommand request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
