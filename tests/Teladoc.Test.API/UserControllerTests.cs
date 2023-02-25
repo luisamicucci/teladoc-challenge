@@ -30,9 +30,7 @@ namespace Teladoc.Test.API
         public async Task Post_ReturnsOkResult()
         {
             // Arrange
-            var request = new AddNewUserCommand { User = _userModelMock };
-
-            _mediatorMock.Setup(m => m.Send(request, It.IsAny<CancellationToken>()))
+            _mediatorMock.Setup(m => m.Send(It.IsAny<AddNewUserCommand>(), It.IsAny<CancellationToken>()))
                          .ReturnsAsync(true);
 
             // Act
@@ -48,13 +46,12 @@ namespace Teladoc.Test.API
         public async Task Get_ReturnsOkResult()
         {
             // Arrange
-            var request = new RetrieveUsersQuery();
             var response = new List<UserModel>
             {
                 _userModelMock
             };
 
-            _mediatorMock.Setup(m => m.Send(request, It.IsAny<CancellationToken>()))
+            _mediatorMock.Setup(m => m.Send(It.IsAny<RetrieveUsersQuery>(), It.IsAny<CancellationToken>()))
                          .ReturnsAsync(response);
 
             // Act
