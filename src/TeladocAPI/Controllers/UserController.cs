@@ -10,16 +10,17 @@ namespace TeladocAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly ILogger<UserController> _logger;
         private readonly IMediator _mediator;
 
-        public UserController(ILogger<UserController> logger, IMediator mediator)
+        public UserController(IMediator mediator)
         {
-            _logger = logger;
             _mediator = mediator;
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(UserModel model)
         {
             await _mediator.Send(new AddNewUserCommand() { User = model });
@@ -27,6 +28,7 @@ namespace TeladocAPI.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
         {
             var users = await _mediator.Send(new RetrieveUsersQuery());

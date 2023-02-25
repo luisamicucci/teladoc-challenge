@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
-using MediatR;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+using Teladoc.Application.Exceptions;
+using Teladoc.Application.Interfaces;
 using Teladoc.Domain.Entities;
 using Teladoc.Infrastructure.Interfaces;
 
 namespace Teladoc.Application.Commands.AddNewUser
 {
-    public class AddNewUserCommandHandler : IRequestHandler<AddNewUserCommand, bool>
+    public class AddNewUserCommandHandler : ICommandHandler<AddNewUserCommand, bool>
     {
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
@@ -20,25 +19,11 @@ namespace Teladoc.Application.Commands.AddNewUser
 
         public async Task<bool> Handle(AddNewUserCommand request, CancellationToken cancellationToken)
         {
-            var validator = new AddNewUserCommandValidator();
-
-            var results = validator.Validate(request);
-
-            bool validationSucceeded = results.IsValid;
-
-            if (!validationSucceeded)
-            {
-                var failures = results.Errors.ToList();
-                var message = new StringBuilder();
-                failures.ForEach(f => { message.Append(f.ErrorMessage + Environment.NewLine); });
-                throw new ValidationException(message.ToString());
-            }
-
             var user = _mapper.Map<User>(request.User);
 
             if(!await _userRepository.IsEmailUnique(user.Email))
             {
-                throw new ValidationException("Email field must be unique");
+                throw new BadRequestException($"Email value must be unique in our system. Email: {user.Email} already exists.");
             }
 
             return await _userRepository.Create(user);

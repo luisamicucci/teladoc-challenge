@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using MediatR;
+using Teladoc.Application.Interfaces;
 using Teladoc.Application.Models;
 using Teladoc.Infrastructure.Interfaces;
 
 namespace Teladoc.Application.Queries.RetrieveUsers
 {
-    public class RetrieveUsersQueryHandler : IRequestHandler<RetrieveUsersQuery, List<UserModel>>
+    public class RetrieveUsersQueryHandler : IQueryHandler<RetrieveUsersQuery, List<UserModel>>
     {
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;

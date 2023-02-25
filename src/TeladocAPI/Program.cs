@@ -1,6 +1,7 @@
 using Teladoc.Application;
 using Teladoc.Domain;
 using Teladoc.Infrastructure;
+using TeladocAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDomain();
 builder.Services.AddInfrastructure();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 builder.Services.AddApplication();
 
 var app = builder.Build();
@@ -23,6 +25,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 

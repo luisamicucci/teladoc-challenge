@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Teladoc.Application.Behaviors;
 using Teladoc.Application.Profiles;
 
 namespace Teladoc.Application
@@ -8,8 +11,12 @@ namespace Teladoc.Application
     {
         public static void AddApplication(this IServiceCollection services)
         {
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+            var assembly = Assembly.GetExecutingAssembly();
+
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assembly));
             services.AddAutoMapper(typeof(UserProfile));
+            services.AddValidatorsFromAssembly(assembly);
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         }
     }
 }
