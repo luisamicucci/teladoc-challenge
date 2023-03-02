@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Teladoc.Infrastructure.Interfaces;
+using Teladoc.Application.Interfaces;
 using Teladoc.Infrastructure.Repositories;
 
 namespace Teladoc.Infrastructure

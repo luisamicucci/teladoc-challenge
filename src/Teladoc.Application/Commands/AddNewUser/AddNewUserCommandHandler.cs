@@ -2,7 +2,6 @@
 using Teladoc.Application.Exceptions;
 using Teladoc.Application.Interfaces;
 using Teladoc.Domain.Entities;
-using Teladoc.Infrastructure.Interfaces;
 
 namespace Teladoc.Application.Commands.AddNewUser
 {

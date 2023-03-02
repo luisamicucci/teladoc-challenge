@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Teladoc.Application.Interfaces;
 using Teladoc.Application.Models;
-using Teladoc.Infrastructure.Interfaces;
 
 namespace Teladoc.Application.Queries.RetrieveUsers
 {

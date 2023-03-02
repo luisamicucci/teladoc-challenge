@@ -1,6 +1,6 @@
 ﻿using Teladoc.Domain.Entities;
 
-namespace Teladoc.Infrastructure.Interfaces
+namespace Teladoc.Application.Interfaces
 {
     public interface IUserRepository
     {

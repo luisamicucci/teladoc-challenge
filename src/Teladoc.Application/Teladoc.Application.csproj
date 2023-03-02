@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Teladoc.Domain\Teladoc.Domain.csproj" />
-    <ProjectReference Include="..\Teladoc.Infrastructure\Teladoc.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

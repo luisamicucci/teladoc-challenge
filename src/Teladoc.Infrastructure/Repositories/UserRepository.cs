@@ -1,6 +1,6 @@
-﻿using Teladoc.Domain;
+﻿using Teladoc.Application.Interfaces;
+using Teladoc.Domain;
 using Teladoc.Domain.Entities;
-using Teladoc.Infrastructure.Interfaces;
 
 namespace Teladoc.Infrastructure.Repositories
 {
